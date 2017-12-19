@@ -29,12 +29,8 @@ Bookmark the [cheat sheet](http://cljs.info/cheatsheet/), but you'll be up and r
 with a fraction of what's in it.
 
 Learn with a [REPL](http://planck-repl.org).
-As always, Google is your friend. As always, if you don't know what it does,
-then you don't need it (Om, Reframe, Pedestal, Yaka, NameYours, ...).
 
-You can contribute to this project with only a minimal knowledge of Clojure.
-Just follow the white rabbit,
-here's some basics to get you on track, search for these topics first.
+Here's some basics to get you on track, search for these topics first.
 
 We process _immutable_ values with (mostly) _pure_ functions.
 
