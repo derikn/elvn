@@ -1,12 +1,7 @@
 (ns elvn.dev
   (:require
-    elvn.core
-
+    ; elvn.core
     elvn.index
-    elvn.users.index
-
-    elvn.cards.optimistic
-    elvn.cards.dev-workflow
 
     [cljs.spec.alpha :as s]
     [clojure.spec.test.alpha :as stest]

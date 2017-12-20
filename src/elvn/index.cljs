@@ -1,21 +1,26 @@
 (ns elvn.index
   (:require
-   [elvn.lib.webapp :as w]
-   [elvn.lib.http :as h]
-   [antizer.reagent :as ant]
-   [reagent.core :as r]
-   [clojure.string :as string :refer [lower-case upper-case]])
+    elvn.cards.optimistic
+    elvn.cards.development
+    elvn.cards.architecture
+
+    elvn.users.index
+
+    [antizer.reagent :as ant]
+    [reagent.core :as r]
+    [clojure.string :as string :refer [lower-case upper-case]])
   (:require-macros
-   [devcards.core :as dc :refer [defcard deftest defcard-rg]]))
+    [devcards.core :as dc :refer [defcard deftest defcard-rg]]))
 
 (defcard
   "# Eeleven")
 
 (defcard
   "
-## Development
+## Tech Topics
 
-- [Workflow](http://localhost:3449/cards.html#!/elvn.cards.dev_workflow)
+- [Development](http://localhost:3449/cards.html#!/elvn.cards.development)
+- [Architecture](http://localhost:3449/cards.html#!/elvn.cards.architecture)
 - [Blocking vs. Optimistic transactions](http://localhost:3449/cards.html#!/elvn.cards.optimistic)
   ")
 
