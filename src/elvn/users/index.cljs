@@ -55,6 +55,11 @@ Key: id.
             :e-mail "john-lydon@gmail.com"
             :phone #:phone{:country-code "65" :number "8888 9999"}
             :company/key "PIL"}
+   #:person{:first-name "Joey"
+            :last-name "Ramones"
+            :e-mail "joey-ramones@gmail.com"
+            :phone #:phone{:country-code "35" :number "9999 4444"}
+            :company/key "RAMONES"}
    #:person{:first-name "Joe"
             :last-name "Strummer"
             :e-mail "joe-strummer@gmail.com"

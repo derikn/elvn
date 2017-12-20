@@ -4,6 +4,8 @@
     elvn.cards.development
     elvn.cards.architecture
 
+    elvn.cards.dev-demo
+
     elvn.users.index
 
     [antizer.reagent :as ant]
