@@ -2,6 +2,8 @@
 
 ## Hacking
 
+Build Status: [![CircleCI](https://circleci.com/gh/Eeleven/elvn.svg?style=svg)](https://circleci.com/gh/Eeleven/elvn)
+
 ### Pre-requisites
 
 - JDK 8
