@@ -14,6 +14,7 @@ Build Status: [![CircleCI](https://circleci.com/gh/Eeleven/elvn.svg?style=svg)](
 - [Leiningen](https://leiningen.org)
 - [Chrome](https://www.google.com/chrome/) or [Canary](https://www.google.com/chrome/browser/canary.html)
 - [rlwrap](http://brewformulas.org/Rlwrap) if you're on OSX
+- [Git](https://desktop.github.com)
 
 ### Getting started
 

@@ -7,6 +7,8 @@
     elvn.cards.dev-demo
     elvn.cards.devsteps.index
 
+    elvn.stepdev.index
+
     elvn.users.index
 
     [antizer.reagent :as ant]
