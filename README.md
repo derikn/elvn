@@ -1,5 +1,9 @@
 # Eeleven
 
+Hello!
+
+We're in setting things up, so we can't accept PRs or issues at this time.
+
 ## Hacking
 
 Build Status: [![CircleCI](https://circleci.com/gh/Eeleven/elvn.svg?style=svg)](https://circleci.com/gh/Eeleven/elvn)
