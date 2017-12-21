@@ -5,6 +5,7 @@
     elvn.cards.architecture
 
     elvn.cards.dev-demo
+    elvn.cards.devsteps.index
 
     elvn.users.index
 
