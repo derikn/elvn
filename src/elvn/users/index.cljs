@@ -261,7 +261,8 @@ Key: person key + company key + role key.
   "Persons data for table"
   (let [db {:persons td-persons
             :companies td-companies}]
-    (persons-table-data db)))
+    (persons-table-data db)
+    (println persons-table-data db)))
 
 (defn persons-table
   [store data]
@@ -440,8 +441,8 @@ Key: person key + company key + role key.
                            :phone {:value "7777 4444"}
                            :country-code {:value "33"}
                            :company {:value "JOYDIVISION"}}}
-           :data {:companies td-companies}}))
-  ; {:inspect-data true})
+           :data {:companies td-companies}})
+  {:inspect-data true})
 
 (defcard
   "

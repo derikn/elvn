@@ -5,9 +5,10 @@
     elvn.cards.architecture
 
     elvn.cards.dev-demo
+    elvn.cards.dev-todo
+    elvn.cards.dev-journal-entry
+    todomvc.core
     elvn.cards.devsteps.index
-
-    #_0 elvn.stepdev.index
 
     elvn.users.index
 
