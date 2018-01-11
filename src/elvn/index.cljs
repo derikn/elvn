@@ -6,6 +6,8 @@
 
     elvn.cards.dev-demo
     elvn.cards.dev-todo
+    elvn.cards.dev-journal-entry
+    todomvc.core
 
     elvn.users.index
 
