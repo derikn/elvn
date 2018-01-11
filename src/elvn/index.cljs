@@ -8,6 +8,7 @@
     elvn.cards.dev-todo
     elvn.cards.dev-journal-entry
     todomvc.core
+    elvn.cards.devsteps.index
 
     elvn.users.index
 

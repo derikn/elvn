@@ -40,8 +40,17 @@
    'args': anything.
    Eval to: nil."
   [store transition & args]
-  (apply swap! (concat [store transition] args))
+  (try
+    (apply swap! (concat [store transition] args))
+    (catch js/Error e
+      (js/alert (.-message e))
+      (throw e)))
   nil)
+
+(defn action-alert
+  [state message]
+  (js/alert message)
+  state)
 
 ;; send/receive
 

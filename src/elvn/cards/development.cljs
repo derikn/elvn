@@ -20,6 +20,13 @@
 
 (defcard
   "
+## Rush
+A 15mn step-by-step dev flow is
+[here](http://localhost:3449/cards.html#!/elvn.cards.devsteps.index).
+  ")
+
+(defcard
+  "
 ## Principles
 
 ### Clojure and ClojureScript
