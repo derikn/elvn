@@ -166,12 +166,12 @@
                :row-key "key"
                :size "middle"}]])
 
-; (defcard-rg journal-entry-card
-;   "This is the journal entry card built with fake data"
-;   (fn [store _]
-;     (je-table store))
-;   (r/atom {:form {:values {:account-input {:value ""}
-;                            :tax-input {:value ""}}}
-;            :data {:accounts account-data}
-;            :row-data data})
-;   {:inspect-data true})
+(defcard-rg journal-entry-card
+  "This is the journal entry card built with fake data"
+  (fn [store _]
+    (je-table store))
+  (r/atom {:form {:values {:account-input {:value ""}
+                           :tax-input {:value ""}}}
+           :data {:accounts account-data}
+           :row-data data})
+  {:inspect-data true})

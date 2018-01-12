@@ -7,6 +7,7 @@
     elvn.cards.dev-demo
     elvn.cards.dev-todo
     elvn.cards.dev-journal-entry
+    elvn.cards.derik
     todomvc.core
     elvn.cards.devsteps.index
 
@@ -25,8 +26,7 @@
 (defcard
   "
 ## Tech Topics
-
-- [Development](http://localhost:3449/cards.html#!/elvn.cards.development)
+- [Development](http://localhost:3449/cards.html#!/elvn.cards.td-derik-je)
 - [Architecture](http://localhost:3449/cards.html#!/elvn.cards.architecture)
 - [Blocking vs. Optimistic transactions](http://localhost:3449/cards.html#!/elvn.cards.optimistic)
   ")

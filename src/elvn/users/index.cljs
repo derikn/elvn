@@ -208,6 +208,26 @@ Key: person key + company key + role key.
   "
 ## Draft UI
   ")
+(defn mkey
+  "Takes a key or seq of keys, and a map.
+   Returns a map entry of the form [(k o) o]."
+  [k o]
+  (if (seqable? k)
+    [(vec (map o k)) o]
+    [(k o) o]))
+
+(defn keyed-list
+  "Takes a seq of maps and a key, or a seq of keys.
+   Returns a map of the form {keys1 map1, ..., keysN mapN}.
+   If a seq of keys was provided, keys1...N are vectors (composite keys).
+   Throws if keys are not unique."
+  [maps ks]
+  (let [r (into {} (map (partial mkey ks) maps))]
+    (if (= (count r) (count maps))
+      r)))
+
+(def pdata {:persons td-persons
+            :companies td-companies})
 
 (defn person-row-data
   [person companies-map]
@@ -228,8 +248,10 @@ Key: person key + company key + role key.
 (defn persons-table-data
   [db]
   (let [persons (get db :persons [])
-        companies-map (w/keyed-list (get db :companies []) :company/id)]
+        companies-map (keyed-list (get db :companies []) :company/id)]
     (map #(person-row-data % companies-map) persons)))
+
+(persons-table-data pdata)
 
 (defn persons-table-cols
   [store]
@@ -247,15 +269,15 @@ Key: person key + company key + role key.
     :key "company"}
    {:title ""
     :render
-    (fn [_ r]
-      (r/as-element
-       [ant/button-group {:size "small"}
-        [ant/button {:type "danger"
-                     :icon "user-delete"
-                     :on-click #(w/dispatch! store delete-person (aget r "key"))}]
-        [ant/button {:type "primary"
-                     :icon "edit"
-                     :on-click #(w/dispatch! store edit-person (aget r "key"))}]]))}])
+    #()}])
+
+(defn entries-table-cols
+  [store]
+  [{:title "Account Name"
+    :dataIndex "account-name"
+    :key "account"
+    :render
+    #()}])
 
 (defcard persons-data
   "Persons data for table"
