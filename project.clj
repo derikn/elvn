@@ -10,7 +10,8 @@
                  [org.clojure/clojurescript "1.9.946"]
                  [devcards "0.2.4"]
                  [antizer "0.2.2"]
-                 [reagent "0.7.0"]]
+                 [reagent "0.7.0"]
+                 [proto-repl "0.3.1"]]
 
   :plugins [[lein-figwheel "0.5.14"]
             [lein-cljsbuild "1.1.7" :exclusions [org.clojure/clojure]]]

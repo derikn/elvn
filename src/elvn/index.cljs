@@ -11,6 +11,7 @@
     elvn.cards.devsteps.index
 
     elvn.users.index
+    elvn.stepdev.index
 
     [antizer.reagent :as ant]
     [reagent.core :as r]
