@@ -69,6 +69,7 @@
 
 (def entry-data
   [#:entry {:id 1
+            ;account-key
             :account/key "1010"
             :tax/key "SGDSALES"}
    #:entry {:id 2
@@ -76,9 +77,12 @@
             :tax/key "SGDALCH"}])
 
 (def one-entry
-  {:id 1
-   :account/key "1010"
-   :tax/key "SGDSALES"})
+  #:entry {:id 5
+           :account/key "1010.08"
+           :tax/key "SGDSALES"})
+
+;test remapping the entries field
+; (assoc-in data [:entries] one-entry)
 
 (def data {:entries entry-data
            :accounts account-data
@@ -141,21 +145,33 @@
             :taxes tax-data}]
     (entry-table-data db)))
 
+;test creating an entry
+(defn delete-agent
+  [state k]
+  (println "delete agent: " k)
+  (let [agents-ori (get-in state [:data :agents])
+        agents-new (w/delete agents-ori :agent/id k)]
+    (assoc-in state [:data :agents] agents-new)))
+
 (defn add-entry
-  []
-  (do
-    (w/create entry-data :entry/id
-              #:entry {:id 3
-                       :account/key "1010.02"
-                       :tax/key "SGDSALES"})
-    (println "CREATED")))
+  [state]
+  (let [entries-ori (get-in state [:data :entries])
+        entries-new (w/create entries-ori :entry/id #:entry{:id 3
+                                                            :account/key "1010.08"
+                                                            :tax/key "SGDSALES"})]
+    (assoc-in state [:data :entries] entries-new)))
+
+(defcard display-add-entry
+  (add-entry #:entry{:id 3
+                     :account/key "1010.08"
+                     :tax/key "SGDSALES"}))
 
 (defn entries-table
   [store data]
   [:div
    [ant/button {:type "primary"
                 :icon "plus-circle"
-                :on-click (add-entry)}
+                :on-click #(w/dispatch! store add-entry)}
       "New entry"]
    [ant/table {:dataSource (entry-table-data data)
                :columns (entry-table-col store)
@@ -169,5 +185,5 @@
           locale-atom (r/atom "en_US")]
        [ant/locale-provider {:locale (ant/locales @locale-atom)}
         [entries-table store data]]))
-  (r/atom {:data data}))
-  ; {:inspect-data true})
+  (r/atom {:data data})
+  {:inspect-data true})

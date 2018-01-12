@@ -190,9 +190,13 @@ Key: person key + company key + role key.
 ;;;;;;;
 
 (defn new-person
-  [state]
-  (println "new person")
-  state)
+  []
+  (w/create td-persons :person/e-mail
+            #:person{:first-name "Debbie"
+                     :last-name "Harry"
+                     :e-mail "debbie-harry@gmail.com"
+                     :phone #:phone{:country-code "33" :number "6666 7777"}
+                     :company/key "BLONDIE"}))
 
 (defn delete-person
   [state k]
@@ -291,7 +295,7 @@ Key: person key + company key + role key.
   [:div
    [ant/button {:type "primary"
                 :icon "plus-circle"
-                :on-click #(w/dispatch! store new-person)}
+                :on-click #(new-person)}
       "New person..."]
    [ant/table {:dataSource (persons-table-data data)
                :columns (persons-table-cols store)
